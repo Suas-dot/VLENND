@@ -46,8 +46,8 @@ export default function Hero() {
     <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-vlennd-deep">
       <HeroBackground />
       
-      {/* Background glow for the central display */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-vlennd-silver/5 blur-[120px] rounded-full pointer-events-none z-10" />
+      {/* Background glow for the central display - subtle and elegant */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-vlennd-silver/5 blur-[150px] rounded-full pointer-events-none z-10" />
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 mb-12">
         <h1 ref={headingRef} className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-vlennd-ivory max-w-4xl mx-auto leading-tight text-balance">
@@ -68,7 +68,7 @@ export default function Hero() {
           className="relative w-64 md:w-[320px] h-[450px] md:h-[580px] rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.9)] border border-white/10 group"
           style={{ transform: 'rotateY(-8deg) rotateX(4deg)', transformStyle: 'preserve-3d' }}
         >
-          {/* Integrated Video as the "Product" */}
+          {/* Integrated Video - The New One */}
           <video 
             autoPlay 
             muted 
@@ -76,14 +76,14 @@ export default function Hero() {
             playsInline 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           >
-            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/v1773263893/0311_bsmr13.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/v1773270616/looo_fglde4.mp4" type="video/mp4" />
           </video>
           
-          {/* Elegant Overlays */}
+          {/* Restoration of Elegant Overlays from the first version */}
           <div className="absolute inset-0 bg-gradient-to-t from-vlennd-deep via-transparent to-vlennd-deep/20"></div>
           <div className="absolute inset-0 bg-vlennd-silver/5 mix-blend-overlay"></div>
           
-          {/* Glossy Reflection Effect */}
+          {/* Restoration of the Glossy Reflection Effect */}
           <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-25deg] transition-all duration-1000 group-hover:left-[100%]"></div>
         </div>
       </div>
