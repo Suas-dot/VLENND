@@ -7,7 +7,7 @@ function FeatureToggle() {
 
   return (
     <div className={`relative p-8 rounded-[2rem] border overflow-hidden transition-colors duration-500 min-h-[400px] flex flex-col items-center justify-between ${active ? 'bg-vlennd-carbon border-vlennd-silver/40 shadow-[0_0_40px_rgba(209,213,219,0.1)]' : 'bg-[#0B0B0C] border-white/5'}`}>
-      
+
       {/* Dynamic background glow */}
       <div className={`absolute top-0 right-0 w-64 h-64 bg-vlennd-silver/10 blur-[80px] transition-opacity duration-700 pointer-events-none ${active ? 'opacity-100' : 'opacity-0'}`} />
 
@@ -33,7 +33,7 @@ function FeatureToggle() {
       </div>
 
       <div className="relative z-10 mt-8 w-max">
-        <div 
+        <div
           onClick={() => setActive(!active)}
           className="w-16 h-8 bg-vlennd-deep rounded-full border border-white/10 flex items-center p-1 cursor-pointer"
         >
@@ -63,7 +63,7 @@ function FeatureTestimonial() {
         duration: 0.3,
         onComplete: () => {
           setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-          gsap.fromTo(contentRef.current, 
+          gsap.fromTo(contentRef.current,
             { opacity: 0, y: -10 },
             { opacity: 1, y: 0, duration: 0.3 }
           );
@@ -76,16 +76,16 @@ function FeatureTestimonial() {
   return (
     <div ref={cardRef} className="relative p-8 rounded-[2rem] border border-white/5 bg-[#0e0e10] overflow-hidden min-h-[400px] flex flex-col items-center justify-center text-center">
       <div className="mb-6 flex space-x-1 justify-center">
-        {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-vlennd-silver fill-vlennd-silver" />)}
+        {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-4 h-4 text-vlennd-silver fill-vlennd-silver" />)}
       </div>
       <div ref={contentRef} className="w-full">
         <p className="font-heading text-xl md:text-2xl text-vlennd-ivory italic leading-snug mb-8">
           "{testimonials[currentIndex].text}"
         </p>
         <div className="flex flex-col items-center">
-          <img 
-            src={testimonials[currentIndex].avatar} 
-            alt="Avatar" 
+          <img
+            src={testimonials[currentIndex].avatar}
+            alt="Avatar"
             className="w-12 h-12 rounded-full border border-vlennd-silver/30 object-cover mb-3"
           />
           <span className="font-sans text-sm font-semibold text-vlennd-smoke">
@@ -106,11 +106,11 @@ function FeatureCalendar() {
   useEffect(() => {
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-      
+
       // Starting pos
       tl.set(cursorRef.current, { x: -80, y: 120 })
         .set(btnRef.current, { scale: 1, backgroundColor: 'transparent', color: '#9A9A9A' })
-        
+
       // Move to Friday
       tl.to(cursorRef.current, { x: 30, y: -20, duration: 1, ease: 'power2.inOut' })
       // Simulate hover
@@ -121,10 +121,10 @@ function FeatureCalendar() {
       tl.to(cursorRef.current, { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1 })
       tl.to(btnRef.current, { scale: 0.95, duration: 0.1, yoyo: true, repeat: 1 }, "<")
       tl.to(btnRef.current, { backgroundImage: 'linear-gradient(135deg, #E5E7EB 0%, #9CA3AF 100%)', color: '#0B0B0C', duration: 0.2 }, "<")
-      
+
       // Wait a bit
       tl.to({}, { duration: 1.5 })
-      
+
       // Reset Friday visually
       tl.to(fridayRef.current, { backgroundColor: 'transparent', color: '#F5F5F3', duration: 0.2 }, "-=1")
     }, containerRef);
@@ -183,10 +183,10 @@ export default function Features() {
 
   return (
     <section ref={sectionRef} className="py-24 relative z-10 w-full px-6 bg-vlennd-deep">
-      <div className="max-w-6xl auto">
+      <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center feature-card">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-vlennd-ivory">
-            Tres formas de dominar la <span className="text-vlennd-silver">noche</span>
+            Explora la experiencia <span className="text-vlennd-silver">VLENND</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

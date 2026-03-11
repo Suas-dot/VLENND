@@ -3,7 +3,7 @@ import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
 import Features from './components/Features';
 import Process from './components/Process';
-import Testimonials from './components/Testimonials';
+
 import CTA from './components/CTA';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
@@ -19,7 +19,7 @@ function App() {
         <SocialProof />
         <Features />
         <Process />
-        <Testimonials />
+
         <CTA />
         <FAQ />
         <Footer />
