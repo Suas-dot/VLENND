@@ -13,30 +13,30 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      tl.fromTo(headingRef.current, 
+      tl.fromTo(headingRef.current,
         { y: 30, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.2, delay: 0.5 }
       )
-      .fromTo('.subheadline', 
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 },
-        "-=0.8"
-      )
-      .fromTo(mockupRef.current,
-        { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.5, ease: 'power2.inOut' },
-        "-=0.5"
-      )
-      .fromTo(badgesRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15 },
-        "-=0.5"
-      )
-      .fromTo('.cta-button',
-        { scale: 0.9, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8 },
-        "-=0.3"
-      );
+        .fromTo('.subheadline',
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1 },
+          "-=0.8"
+        )
+        .fromTo(mockupRef.current,
+          { scale: 0.8, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 1.5, ease: 'power2.inOut' },
+          "-=0.5"
+        )
+        .fromTo(badgesRef.current,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.15 },
+          "-=0.5"
+        )
+        .fromTo('.cta-button',
+          { scale: 0.9, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.8 },
+          "-=0.3"
+        );
     }, containerRef);
 
     return () => ctx.revert();
@@ -45,7 +45,7 @@ export default function Hero() {
   return (
     <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-vlennd-deep">
       <HeroBackground />
-      
+
       {/* Background glow for the central display - subtle and elegant */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-vlennd-silver/5 blur-[150px] rounded-full pointer-events-none z-10" />
 
@@ -59,30 +59,30 @@ export default function Hero() {
         </p>
       </div>
 
-      <div 
-        ref={mockupRef} 
+      <div
+        ref={mockupRef}
         className="relative z-30 mx-auto mb-16 will-change-transform cursor-pointer"
         style={{ perspective: '1200px' }}
       >
-        <div 
+        <div
           className="relative w-64 md:w-[320px] h-[450px] md:h-[580px] rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.9)] border border-white/10 group"
           style={{ transform: 'rotateY(-8deg) rotateX(4deg)', transformStyle: 'preserve-3d' }}
         >
           {/* Integrated Video - The New One */}
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           >
-            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/v1773270616/looo_fglde4.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/v1773278180/0311_1_cwgva1.mp4" type="video/mp4" />
           </video>
-          
+
           {/* Restoration of Elegant Overlays from the first version */}
           <div className="absolute inset-0 bg-gradient-to-t from-vlennd-deep via-transparent to-vlennd-deep/20"></div>
           <div className="absolute inset-0 bg-vlennd-silver/5 mix-blend-overlay"></div>
-          
+
           {/* Restoration of the Glossy Reflection Effect */}
           <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-25deg] transition-all duration-1000 group-hover:left-[100%]"></div>
         </div>
@@ -96,7 +96,7 @@ export default function Hero() {
         ].map((badge, idx) => {
           const Icon = badge.icon;
           return (
-            <div 
+            <div
               key={idx}
               ref={el => badgesRef.current[idx] = el}
               className="flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-vlennd-carbon/80 border border-white/5 backdrop-blur-sm"
