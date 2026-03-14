@@ -52,7 +52,7 @@ export default function SocialProof() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 bg-[#0e0e10] relative z-10 border-y border-white/5">
+    <section ref={containerRef} className="py-24 bg-[#100820] relative z-10 border-y border-white/5">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {metrics.map((metric, idx) => (

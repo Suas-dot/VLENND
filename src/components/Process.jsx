@@ -57,7 +57,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-[#0A0A0B] relative z-10 border-y border-vlennd-silver/5">
+    <section ref={sectionRef} className="py-32 bg-[#0b0515] relative z-10 border-y border-vlennd-silver/5">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-24 text-vlennd-ivory">
           El trayecto de la <span className="text-vlennd-silver">noche perfecta</span>

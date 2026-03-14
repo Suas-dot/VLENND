@@ -69,9 +69,9 @@ body::-webkit-scrollbar {
   width: 10px;
 }
 body::-webkit-scrollbar-track {
-  background: #0B0B0C;
+  background: #0d0618;
 }
 body::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #2d1654;
   border-radius: 5px;
 }

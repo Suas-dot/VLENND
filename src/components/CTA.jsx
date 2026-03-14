@@ -46,7 +46,7 @@ export default function CTA() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-[#0B0B0C] relative z-10 border-t border-vlennd-silver/5">
+    <section ref={containerRef} className="py-32 bg-[#0b0515] relative z-10 border-t border-vlennd-silver/5">
       <div className="absolute inset-0 bg-silver-gradient opacity-[0.02] mix-blend-overlay pointer-events-none"></div>
       
       <div className="max-w-6xl mx-auto px-6 relative z-10 text-center mb-20">
@@ -63,7 +63,7 @@ export default function CTA() {
               className={`pricing-card w-full lg:w-1/3 flex flex-col p-10 rounded-[2.5rem] border transition-transform duration-500 will-change-transform ${
                 pack.isPrimary 
                   ? 'bg-vlennd-carbon border-vlennd-silver/50 shadow-[0_0_50px_rgba(209,213,219,0.15)] lg:scale-110 lg:-translate-y-4 lg:hover:-translate-y-6 z-20' 
-                  : 'bg-[#111113] border-white/5 hover:-translate-y-2 z-10'
+                  : 'bg-[#130a22] border-white/5 hover:-translate-y-2 z-10'
               }`}
             >
               {pack.isPrimary && (

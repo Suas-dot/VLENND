@@ -3,19 +3,18 @@ import { ShaderPlane } from "./background-paper-shaders"
 
 export default function HeroBackground() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#0d0618]">
       <Canvas
         camera={{ position: [0, 0, 1], fov: 75 }}
-        style={{ background: 'transparent' }}
+        style={{ background: '#0d0618' }}
       >
         <ShaderPlane 
           position={[0, 0, 0]} 
-          color1="#111113" 
-          color2="#333333" 
+          color1="#1a0a2e" 
+          color2="#2d1654" 
         />
       </Canvas>
-      {/* Overlay to dim it slightly and ensure text readability */}
-      <div className="absolute inset-0 bg-vlennd-deep/40 backdrop-blur-[2px]"></div>
+      <div className="absolute inset-0 bg-[#0d0618]/20"></div>
     </div>
   )
 }

@@ -43,11 +43,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-vlennd-deep">
+    <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-[#0d0618]">
       <HeroBackground />
 
-      {/* Background glow for the central display - subtle and elegant */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-vlennd-silver/5 blur-[150px] rounded-full pointer-events-none z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-purple-900/20 blur-[180px] rounded-full pointer-events-none z-10" />
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 mb-12">
         <h1 ref={headingRef} className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.02em] text-vlennd-ivory max-w-3xl mx-auto leading-[1.1] text-balance">

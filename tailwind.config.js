@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'vlennd-deep': '#0B0B0C',
-        'vlennd-carbon': '#111113',
+        'vlennd-deep': '#0d0618',
+        'vlennd-carbon': '#130a22',
         'vlennd-silver': '#D1D5DB', // Polished Silver
         'vlennd-ivory': '#F5F5F3',
         'vlennd-smoke': '#9A9A9A',

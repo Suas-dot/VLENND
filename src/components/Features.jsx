@@ -6,7 +6,7 @@ function FeatureToggle() {
   const [active, setActive] = useState(false);
 
   return (
-    <div className={`relative p-8 rounded-[2rem] border overflow-hidden transition-colors duration-500 min-h-[400px] flex flex-col items-center justify-between ${active ? 'bg-vlennd-carbon border-vlennd-silver/40 shadow-[0_0_40px_rgba(209,213,219,0.1)]' : 'bg-[#0B0B0C] border-white/5'}`}>
+    <div className={`relative p-8 rounded-[2rem] border overflow-hidden transition-colors duration-500 min-h-[400px] flex flex-col items-center justify-between ${active ? 'bg-vlennd-carbon border-vlennd-silver/40 shadow-[0_0_40px_rgba(209,213,219,0.1)]' : 'bg-[#0b0515] border-white/5'}`}>
 
       {/* Dynamic background glow */}
       <div className={`absolute top-0 right-0 w-64 h-64 bg-vlennd-silver/10 blur-[80px] transition-opacity duration-700 pointer-events-none ${active ? 'opacity-100' : 'opacity-0'}`} />
@@ -74,7 +74,7 @@ function FeatureTestimonial() {
   }, []);
 
   return (
-    <div ref={cardRef} className="relative p-8 rounded-[2rem] border border-white/5 bg-[#0e0e10] overflow-hidden min-h-[400px] flex flex-col items-center justify-center text-center">
+    <div ref={cardRef} className="relative p-8 rounded-[2rem] border border-white/5 bg-[#100820] overflow-hidden min-h-[400px] flex flex-col items-center justify-center text-center">
       <div className="mb-6 flex space-x-1 justify-center">
         {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-4 h-4 text-vlennd-silver fill-vlennd-silver" />)}
       </div>
@@ -132,7 +132,7 @@ function FeatureCalendar() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative p-8 rounded-[2rem] border border-white/5 bg-[#0e0e10] overflow-hidden min-h-[400px] flex flex-col items-center justify-between">
+    <div ref={containerRef} className="relative p-8 rounded-[2rem] border border-white/5 bg-[#100820] overflow-hidden min-h-[400px] flex flex-col items-center justify-between">
       <div className="w-full">
         <h3 className="font-sans text-sm font-semibold text-vlennd-smoke mb-6 text-center uppercase tracking-widest">Planifica</h3>
         <div className="flex justify-between max-w-[200px] mx-auto text-sm font-mono text-vlennd-ivory/60">

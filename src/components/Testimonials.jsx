@@ -41,7 +41,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-[#111113] relative z-10 overflow-hidden" style={{ perspective: '1000px' }}>
+    <section ref={containerRef} className="py-32 bg-[#130a22] relative z-10 overflow-hidden" style={{ perspective: '1000px' }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-vlennd-ivory">
@@ -53,7 +53,7 @@ export default function Testimonials() {
           {reviews.map((rev, idx) => (
             <div 
               key={idx} 
-              className="testimonial-card bg-[#0B0B0C] rounded-[2rem] p-10 border border-white/5 shadow-xl flex flex-col items-start justify-between min-h-[300px] transition-transform duration-500 hover:-translate-y-2 hover:border-vlennd-silver/20"
+              className="testimonial-card bg-[#0b0515] rounded-[2rem] p-10 border border-white/5 shadow-xl flex flex-col items-start justify-between min-h-[300px] transition-transform duration-500 hover:-translate-y-2 hover:border-vlennd-silver/20"
             >
               <div className="text-vlennd-silver mb-6 relative">
                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.2" className="absolute -top-4 -left-2"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>

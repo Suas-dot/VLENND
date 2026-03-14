@@ -40,11 +40,10 @@ const fragmentShader = `
     vec3 color = mix(color1, color2, noise * 0.5 + 0.5);
     color = mix(color, vec3(1.0), pow(abs(noise), 2.0) * intensity);
     
-    // Add glow effect
-    float glow = 1.0 - length(uv - 0.5) * 2.0;
-    glow = pow(glow, 2.0);
+    float glow = 1.0 - length(uv - 0.5) * 1.2;
+    glow = clamp(glow, 0.3, 1.0);
     
-    gl_FragColor = vec4(color * glow, glow * 0.8);
+    gl_FragColor = vec4(color * glow, glow * 0.9);
   }
 `
 
