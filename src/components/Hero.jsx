@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { MousePointer2, Sparkles, Flame, PartyPopper } from 'lucide-react';
-import HeroBackground from './ui/HeroBackground';
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -43,8 +42,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-[#0d0618]">
-      <HeroBackground />
+    <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-transparent">
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-purple-900/20 blur-[180px] rounded-full pointer-events-none z-10" />
 
@@ -72,7 +70,7 @@ export default function Hero() {
             playsInline
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           >
-            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/v1773278180/0311_1_cwgva1.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/v1773470008/0314_gyatcv.mp4" type="video/mp4" />
           </video>
 
           {/* Restoration of Elegant Overlays from the first version */}

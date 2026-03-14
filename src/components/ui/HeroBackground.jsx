@@ -3,7 +3,7 @@ import { ShaderPlane } from "./background-paper-shaders"
 
 export default function HeroBackground() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#0d0618]">
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#0d0618]">
       <Canvas
         camera={{ position: [0, 0, 1], fov: 75 }}
         style={{ background: '#0d0618' }}

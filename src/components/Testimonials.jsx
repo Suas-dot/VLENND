@@ -41,7 +41,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-[#130a22] relative z-10 overflow-hidden" style={{ perspective: '1000px' }}>
+    <section ref={containerRef} className="py-32 bg-[#130a22]/70 backdrop-blur-sm relative z-10 overflow-hidden" style={{ perspective: '1000px' }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-vlennd-ivory">

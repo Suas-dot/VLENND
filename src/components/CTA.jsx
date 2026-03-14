@@ -46,7 +46,7 @@ export default function CTA() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-[#0b0515] relative z-10 border-t border-vlennd-silver/5">
+    <section ref={containerRef} className="py-32 bg-[#0b0515]/70 backdrop-blur-sm relative z-10 border-t border-vlennd-silver/5">
       <div className="absolute inset-0 bg-silver-gradient opacity-[0.02] mix-blend-overlay pointer-events-none"></div>
       
       <div className="max-w-6xl mx-auto px-6 relative z-10 text-center mb-20">
