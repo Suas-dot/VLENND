@@ -50,13 +50,10 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-vlennd-silver/5 blur-[150px] rounded-full pointer-events-none z-10" />
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 mb-12">
-        <h1 ref={headingRef} className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-vlennd-ivory max-w-4xl mx-auto leading-tight text-balance">
-          El vodka que convierte la noche en<br /> <span className="text-vlennd-silver">experiencia.</span>
+        <h1 ref={headingRef} className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.02em] text-vlennd-ivory max-w-3xl mx-auto leading-[1.1] text-balance">
+          EL VODKA QUE CONVIERTE LA NOCHE EN<br /> <span className="text-vlennd-silver">EXPERIENCIA.</span>
         </h1>
-        <p className="subheadline mt-6 max-w-2xl text-lg md:text-xl text-vlennd-smoke font-sans font-medium text-balance leading-relaxed">
-          Sabores intensos. Diseño premium.<br />
-          El vodka listo para dominar la fiesta.
-        </p>
+        
       </div>
 
       <div

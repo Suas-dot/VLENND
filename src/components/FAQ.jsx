@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ChevronDown } from 'lucide-react';
 
 const faqs = [
-  { q: "¿Qué grado de alcohol tiene VLENND?", a: "VLENND es un vodka premium con 40% de volumen de alcohol, destilado 5 veces para garantizar la máxima pureza." },
+  { q: "¿Qué grado de alcohol tiene VLENND?", a: "VLENND es un vodka premium con 25% de volumen de alcohol, destilado 5 veces para garantizar la máxima pureza." },
   { q: "¿Se puede comprar en línea?", a: "Sí, enviamos directamente a tu puerta. Asegura tus botellas desde nuestra tienda en línea oficial." },
   { q: "¿Los sabores son naturales?", a: "Absolutamente. Utilizamos esencias naturales extraídas bajo procesos de alta gama para nuestro chicle, manzana verde, uva y naranjilla." },
   { q: "¿Envían a todo el país?", a: "Contamos con envíos nacionales a las principales ciudades. Revisa la cobertura durante el checkout." },

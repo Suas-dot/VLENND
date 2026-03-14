@@ -15,8 +15,8 @@ export default {
         'vlennd-chrome': '#E5E7EB',
       },
       fontFamily: {
-        heading: ['"Playfair Display"', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        heading: ['Jost', 'sans-serif'],
+        sans: ['Jost', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       backgroundImage: {
