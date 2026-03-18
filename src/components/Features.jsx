@@ -4,6 +4,27 @@ import { MousePointer2, Star } from 'lucide-react';
 
 function FeatureToggle() {
   const [active, setActive] = useState(false);
+  const glowRef = useRef(null);
+  const thumbRef = useRef(null);
+
+  const handleToggle = () => {
+    const next = !active;
+    setActive(next);
+    onToggle(next);
+
+    if (glowRef.current) {
+      gsap.fromTo(glowRef.current,
+        { scale: 0.8, opacity: 0.6 },
+        { scale: 1.4, opacity: 0, duration: 0.6, ease: 'power2.out' }
+      );
+    }
+    if (thumbRef.current) {
+      gsap.fromTo(thumbRef.current,
+        { scale: 1.2 },
+        { scale: 1, duration: 0.3, ease: 'back.out(2)' }
+      );
+    }
+  };
 
   return (
     <div className={`relative p-8 rounded-[2rem] border overflow-hidden transition-colors duration-500 min-h-[400px] flex flex-col items-center justify-between ${active ? 'bg-vlennd-carbon border-vlennd-silver/40 shadow-[0_0_40px_rgba(209,213,219,0.1)]' : 'bg-[#0b0515] border-white/5'}`}>

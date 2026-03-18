@@ -47,10 +47,13 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-purple-900/20 blur-[180px] rounded-full pointer-events-none z-10" />
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 mb-12">
-        <h1 ref={headingRef} className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.02em] text-vlennd-ivory max-w-3xl mx-auto leading-[1.1] text-balance">
-          EL VODKA QUE CONVIERTE LA NOCHE EN<br /> <span className="text-vlennd-silver">EXPERIENCIA.</span>
-        </h1>
-        
+        <h1 className="sr-only">VLENND Vodka</h1>
+        <p ref={headingRef} className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold tracking-[-0.02em] text-vlennd-ivory max-w-3xl mx-auto leading-[1.1] text-balance">
+          EL{' '}
+          <span className="text-iridescent">VODKA</span>
+          {' '}QUE CONVIERTE LA NOCHE EN<br />
+          <span className="text-iridescent">EXPERIENCIA.</span>
+        </p>
       </div>
 
       <div

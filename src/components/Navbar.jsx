@@ -61,7 +61,8 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between px-6 md:px-10">
-          <a href="#" className="font-heading text-3xl font-bold tracking-wider text-vlennd-ivory">
+          <a href="#" className="flex items-center gap-2 font-heading text-2xl md:text-3xl font-bold tracking-wider text-vlennd-ivory">
+            <img src="/logo-vlennd.png" alt="VLENND logo" className="w-6 h-6 md:w-8 md:h-8 object-contain brightness-0 invert flex-shrink-0" />
             VLENND
           </a>
 
