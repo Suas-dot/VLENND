@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const metrics = [
-  { value: 12, prefix: '+', suffix: '', label: 'sabores únicos' },
-  { value: 25000, prefix: '+', suffix: '', label: 'botellas vendidas' },
-  { value: 98, prefix: '', suffix: '%', label: 'repetiría la experiencia' },
-  { value: 150, prefix: '+', suffix: '', label: 'fiestas patrocinadas' }
+  { value: 5,   prefix: '+', suffix: '', label: 'sabores únicos' },
+  { value: 420, prefix: '+', suffix: '', label: 'botellas vendidas' },
+  { value: 98,  prefix: '', suffix: '%', label: 'repetiría la experiencia' },
+  { value: 19,  prefix: '+', suffix: '', label: 'fiestas patrocinadas' }
 ];
 
 export default function SocialProof() {

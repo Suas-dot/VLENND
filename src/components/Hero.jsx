@@ -71,9 +71,11 @@ export default function Hero() {
             muted
             loop
             playsInline
+            preload="none"
+            poster="/bottle.png"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           >
-            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/v1773470008/0314_gyatcv.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/q_auto,f_auto/v1773470008/0314_gyatcv.mp4" type="video/mp4" />
           </video>
 
           {/* Restoration of Elegant Overlays from the first version */}

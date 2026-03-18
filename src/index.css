@@ -48,6 +48,56 @@
   }
 }
 
+.shader-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.shader-blob-1 {
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, #2d1654 0%, #1a0a2e 60%, transparent 100%);
+  top: -10%;
+  left: -10%;
+  animation: blob-drift-1 10s ease-in-out infinite alternate;
+}
+
+.shader-blob-2 {
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, #3b1278 0%, #1a0a2e 60%, transparent 100%);
+  bottom: -10%;
+  right: -10%;
+  animation: blob-drift-2 13s ease-in-out infinite alternate;
+}
+
+.shader-blob-3 {
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, #4a0e6e 0%, transparent 70%);
+  top: 40%;
+  left: 30%;
+  animation: blob-drift-3 8s ease-in-out infinite alternate;
+}
+
+@keyframes blob-drift-1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(15%, 20%) scale(1.15); }
+}
+
+@keyframes blob-drift-2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-20%, -15%) scale(1.1); }
+}
+
+@keyframes blob-drift-3 {
+  from { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  to   { transform: translate(-10%, 15%) scale(1.2); opacity: 0.7; }
+}
+
 .noise-overlay {
   position: fixed;
   top: 0;

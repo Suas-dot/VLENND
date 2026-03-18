@@ -32,11 +32,9 @@ const fragmentShader = `
   void main() {
     vec2 uv = vUv;
     
-    // Create animated noise pattern
     float noise = sin(uv.x * 20.0 + time) * cos(uv.y * 15.0 + time * 0.8);
     noise += sin(uv.x * 35.0 - time * 2.0) * cos(uv.y * 25.0 + time * 1.2) * 0.5;
     
-    // Mix colors based on noise and position
     vec3 color = mix(color1, color2, noise * 0.5 + 0.5);
     color = mix(color, vec3(1.0), pow(abs(noise), 2.0) * intensity);
     
