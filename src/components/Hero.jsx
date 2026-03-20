@@ -71,7 +71,7 @@ export default function Hero() {
             muted
             loop
             playsInline
-            preload="none"
+            preload="auto"
             poster="/bottle.png"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           >
