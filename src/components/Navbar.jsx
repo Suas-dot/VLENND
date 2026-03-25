@@ -95,7 +95,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between px-6 md:px-10">
           <a href="#" className="flex items-center gap-2 text-vlennd-ivory">
-            <img src="/logo-vlennd.png" alt="VLENND logo" className="w-6 h-6 md:w-8 md:h-8 object-contain brightness-0 invert flex-shrink-0" />
+            <img src="/logo-vlennd.png" alt="VLENND logo" className="w-6 h-6 md:w-[30px] md:h-[30px] object-contain brightness-0 invert flex-shrink-0 self-start mt-[5px]" />
             <div className="flex flex-col leading-none gap-[3px]">
               <span className="font-heading text-2xl md:text-3xl font-bold tracking-[0.35em]">VLENND</span>
               <span className="font-sans text-[9px] md:text-[10px] tracking-[0.2em] text-vlennd-smoke uppercase text-center">Sabor · Arte · Diversión</span>
@@ -141,7 +141,7 @@ export default function Navbar() {
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
             <a href="#" onClick={closeMenu} className="flex items-center gap-2 text-vlennd-ivory">
-              <img src="/logo-vlennd.png" alt="VLENND logo" className="w-6 h-6 object-contain brightness-0 invert" />
+              <img src="/logo-vlennd.png" alt="VLENND logo" className="w-5 h-5 object-contain brightness-0 invert" />
               <div className="flex flex-col leading-none gap-[2px]">
                 <span className="font-heading text-xl font-bold tracking-[0.3em]">VLENND</span>
                 <span className="font-sans text-[8px] tracking-[0.2em] text-vlennd-smoke uppercase text-center">Sabor · Arte · Diversión</span>

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { MousePointer2, Star } from 'lucide-react';
 
-function FeatureToggle() {
+function FeatureToggle({ onToggle = () => {} }) {
   const [active, setActive] = useState(false);
   const glowRef = useRef(null);
   const thumbRef = useRef(null);
@@ -65,55 +65,78 @@ function FeatureToggle() {
   );
 }
 
-const testimonials = [
-  { text: "El sabor a uva de VLENND es otro nivel.", author: "Andrés M.", avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&w=100&q=80" },
-  { text: "Nunca había probado vodka con tanto carácter.", author: "Daniela R.", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&w=100&q=80" },
-  { text: "VLENND se volvió obligatorio en nuestras fiestas.", author: "Mateo L.", avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&w=100&q=80" }
-];
+function FeatureReview() {
+  const [name, setName] = useState('');
+  const [rating, setRating] = useState(5);
+  const [message, setMessage] = useState('');
+  const [sent, setSent] = useState(false);
 
-function FeatureTestimonial() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const cardRef = useRef(null);
-  const contentRef = useRef(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      gsap.to(contentRef.current, {
-        opacity: 0,
-        y: 10,
-        duration: 0.3,
-        onComplete: () => {
-          setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-          gsap.fromTo(contentRef.current,
-            { opacity: 0, y: -10 },
-            { opacity: 1, y: 0, duration: 0.3 }
-          );
-        }
-      });
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSent(true);
+    setName('');
+    setMessage('');
+    setRating(5);
+  };
 
   return (
-    <div ref={cardRef} className="relative p-8 rounded-[2rem] border border-white/5 bg-[#100820] overflow-hidden min-h-[400px] flex flex-col items-center justify-center text-center">
-      <div className="mb-6 flex space-x-1 justify-center">
-        {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-4 h-4 text-vlennd-silver fill-vlennd-silver" />)}
-      </div>
-      <div ref={contentRef} className="w-full">
-        <p className="font-heading text-xl md:text-2xl text-vlennd-ivory italic leading-snug mb-8">
-          "{testimonials[currentIndex].text}"
-        </p>
-        <div className="flex flex-col items-center">
-          <img
-            src={testimonials[currentIndex].avatar}
-            alt="Avatar"
-            className="w-12 h-12 rounded-full border border-vlennd-silver/30 object-cover mb-3"
-          />
-          <span className="font-sans text-sm font-semibold text-vlennd-smoke">
-            — {testimonials[currentIndex].author}
-          </span>
+    <div className="relative p-8 rounded-[2rem] border border-white/5 bg-[#100820] overflow-hidden min-h-[400px]">
+      <h3 className="font-heading text-2xl font-bold text-vlennd-ivory text-center">
+        Dejanos tu reseña
+      </h3>
+      <p className="mt-2 text-center text-sm text-vlennd-smoke font-sans">
+        Tu opinión nos ayuda a mejorar la experiencia VLENND.
+      </p>
+
+      <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Tu nombre"
+          className="w-full rounded-xl border border-white/10 bg-vlennd-carbon/70 px-4 py-2.5 text-sm text-vlennd-ivory placeholder:text-vlennd-smoke/80 outline-none focus:border-vlennd-silver/50"
+          required
+        />
+
+        <div>
+          <p className="text-xs uppercase tracking-widest text-vlennd-smoke font-sans mb-2">Calificación</p>
+          <div className="flex gap-2">
+            {[1, 2, 3, 4, 5].map((value) => (
+              <button
+                key={value}
+                type="button"
+                onClick={() => setRating(value)}
+                className="transition-transform hover:scale-110"
+                aria-label={`Calificar con ${value} estrellas`}
+              >
+                <Star className={`w-5 h-5 ${value <= rating ? 'text-vlennd-silver fill-vlennd-silver' : 'text-vlennd-smoke/50'}`} />
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Cuéntanos cómo fue tu experiencia..."
+          rows={4}
+          className="w-full rounded-xl border border-white/10 bg-vlennd-carbon/70 px-4 py-3 text-sm text-vlennd-ivory placeholder:text-vlennd-smoke/80 outline-none focus:border-vlennd-silver/50 resize-none"
+          required
+        />
+
+        <button
+          type="submit"
+          className="w-full rounded-full bg-silver-gradient text-vlennd-deep font-sans font-semibold py-2.5 shadow-[0_6px_16px_rgba(209,213,219,0.25)] hover:scale-[1.02] transition-transform"
+        >
+          Enviar reseña
+        </button>
+
+        {sent && (
+          <p className="text-center text-xs text-vlennd-silver font-sans">
+            Gracias por tu reseña. La recibimos correctamente.
+          </p>
+        )}
+      </form>
     </div>
   );
 }
@@ -212,7 +235,7 @@ export default function Features() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="feature-card"><FeatureToggle /></div>
-          <div className="feature-card"><FeatureTestimonial /></div>
+          <div className="feature-card"><FeatureReview /></div>
           <div className="feature-card"><FeatureCalendar /></div>
         </div>
       </div>
