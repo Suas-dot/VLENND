@@ -105,7 +105,6 @@ export default function Navbar({ onFlavorSelect }) {
                 </svg>
               </a>
             </div>
-            <a href="#experiencia" className="px-4 py-1.5 rounded-full transition-all duration-300 hover:bg-white/10 hover:text-vlennd-silver">Experiencia</a>
             <a href="#faq" className="px-4 py-1.5 rounded-full transition-all duration-300 hover:bg-white/10 hover:text-vlennd-silver">FAQ</a>
           </div>
 
@@ -159,10 +158,6 @@ export default function Navbar({ onFlavorSelect }) {
                   <span className="font-heading text-2xl font-bold text-vlennd-ivory/80 group-hover:text-vlennd-ivory transition-colors tracking-wide uppercase">Sabores</span>
                   <ChevronRight className="w-5 h-5 text-vlennd-smoke group-hover:text-vlennd-silver transition-colors" />
                 </button>
-
-                <a href="#experiencia" onClick={handleLinkClick} className="flex items-center justify-between py-4 border-b border-white/5 group">
-                  <span className="font-heading text-2xl font-bold text-vlennd-ivory/80 group-hover:text-vlennd-ivory transition-colors tracking-wide uppercase">Experiencia</span>
-                </a>
 
                 <a href="#faq" onClick={handleLinkClick} className="flex items-center justify-between py-4 border-b border-white/5 group">
                   <span className="font-heading text-2xl font-bold text-vlennd-ivory/80 group-hover:text-vlennd-ivory transition-colors tracking-wide uppercase">FAQ</span>

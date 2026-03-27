@@ -1,7 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
-import Features from './components/Features';
 import Process from './components/Process';
 import HeroBackground from './components/ui/HeroBackground';
 import { useState } from 'react';
@@ -132,7 +131,6 @@ function App() {
         <Navbar onFlavorSelect={handleFlavorSelect} />
         <Hero onBuyNow={handleBuyNow} />
         <SocialProof />
-        <Features />
         <Process />
 
         <CTA onBuyNow={handleBuyNow} />

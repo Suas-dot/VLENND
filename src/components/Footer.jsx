@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="col-span-1">
              <ul className="space-y-4 font-sans text-sm text-vlennd-ivory/80">
                 <li><a href="#sabores" className="hover:text-vlennd-silver transition-colors">Sabores</a></li>
-               <li><a href="#experiencia" className="hover:text-vlennd-silver transition-colors">Experiencia</a></li>
+               <li><a href="#faq" className="hover:text-vlennd-silver transition-colors">Experiencia</a></li>
                <li><a href="#checkout" className="hover:text-vlennd-silver transition-colors">Comprar</a></li>
              </ul>
           </div>
@@ -74,7 +74,7 @@ export default function Footer() {
                    Instagram oficial
                  </a>
                </li>
-               <li><a href="#experiencia" className="hover:text-vlennd-silver transition-colors">Eventos</a></li>
+               <li><a href="#sabores" className="hover:text-vlennd-silver transition-colors">Eventos</a></li>
                <li><a href="#checkout" className="hover:text-vlennd-silver transition-colors">Distribuidores</a></li>
              </ul>
           </div>
