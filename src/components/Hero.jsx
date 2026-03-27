@@ -47,7 +47,7 @@ export default function Hero({ onBuyNow }) {
   return (
     <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-transparent">
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-purple-900/20 blur-[180px] rounded-full pointer-events-none z-10" />
+      <div className="theme-hero-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-purple-900/20 blur-[180px] rounded-full pointer-events-none z-10" />
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 mb-12">
         <h1 className="sr-only">VLENND Vodka</h1>
@@ -101,7 +101,7 @@ export default function Hero({ onBuyNow }) {
             <div
               key={idx}
               ref={el => badgesRef.current[idx] = el}
-              className="flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-vlennd-carbon/80 border border-white/5 backdrop-blur-sm"
+              className="theme-hero-badge flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-vlennd-carbon/80 border border-white/5 backdrop-blur-sm"
             >
               <Icon className="w-5 h-5 text-vlennd-silver" />
               <span className="font-mono text-sm font-medium tracking-wide text-vlennd-ivory">{badge.text}</span>

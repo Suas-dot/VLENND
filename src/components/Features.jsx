@@ -27,7 +27,7 @@ function FeatureToggle({ onToggle = () => {} }) {
   };
 
   return (
-    <div className={`relative p-8 rounded-[2rem] border overflow-hidden transition-colors duration-500 min-h-[400px] flex flex-col items-center justify-between ${active ? 'bg-vlennd-carbon border-vlennd-silver/40 shadow-[0_0_40px_rgba(209,213,219,0.1)]' : 'bg-[#0b0515] border-white/5'}`}>
+    <div className={`theme-feature-card relative p-8 rounded-[2rem] border overflow-hidden transition-colors duration-500 min-h-[400px] flex flex-col items-center justify-between ${active ? 'theme-feature-card-active bg-vlennd-carbon border-vlennd-silver/40 shadow-[0_0_40px_rgba(209,213,219,0.1)]' : 'bg-[#0b0515] border-white/5'}`}>
 
       {/* Dynamic background glow */}
       <div className={`absolute top-0 right-0 w-64 h-64 bg-vlennd-silver/10 blur-[80px] transition-opacity duration-700 pointer-events-none ${active ? 'opacity-100' : 'opacity-0'}`} />
@@ -56,7 +56,7 @@ function FeatureToggle({ onToggle = () => {} }) {
       <div className="relative z-10 mt-8 w-max">
         <div
           onClick={() => setActive(!active)}
-          className="w-16 h-8 bg-vlennd-deep rounded-full border border-white/10 flex items-center p-1 cursor-pointer"
+          className="theme-toggle-track w-16 h-8 bg-vlennd-deep rounded-full border border-white/10 flex items-center p-1 cursor-pointer"
         >
           <div className={`w-6 h-6 rounded-full bg-vlennd-silver transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${active ? 'translate-x-8' : 'translate-x-0'}`} />
         </div>
@@ -80,7 +80,7 @@ function FeatureReview() {
   };
 
   return (
-    <div className="relative p-8 rounded-[2rem] border border-white/5 bg-[#100820] overflow-hidden min-h-[400px]">
+    <div className="theme-feature-card relative p-8 rounded-[2rem] border border-white/5 bg-[#100820] overflow-hidden min-h-[400px]">
       <h3 className="font-heading text-2xl font-bold text-vlennd-ivory text-center">
         Dejanos tu reseña
       </h3>
@@ -94,7 +94,7 @@ function FeatureReview() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Tu nombre"
-          className="w-full rounded-xl border border-white/10 bg-vlennd-carbon/70 px-4 py-2.5 text-sm text-vlennd-ivory placeholder:text-vlennd-smoke/80 outline-none focus:border-vlennd-silver/50"
+          className="theme-input-surface w-full rounded-xl border border-white/10 bg-vlennd-carbon/70 px-4 py-2.5 text-sm text-vlennd-ivory placeholder:text-vlennd-smoke/80 outline-none focus:border-vlennd-silver/50"
           required
         />
 
@@ -120,7 +120,7 @@ function FeatureReview() {
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Cuéntanos cómo fue tu experiencia..."
           rows={4}
-          className="w-full rounded-xl border border-white/10 bg-vlennd-carbon/70 px-4 py-3 text-sm text-vlennd-ivory placeholder:text-vlennd-smoke/80 outline-none focus:border-vlennd-silver/50 resize-none"
+          className="theme-input-surface w-full rounded-xl border border-white/10 bg-vlennd-carbon/70 px-4 py-3 text-sm text-vlennd-ivory placeholder:text-vlennd-smoke/80 outline-none focus:border-vlennd-silver/50 resize-none"
           required
         />
 
@@ -181,7 +181,7 @@ function FeatureCalendar() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative p-8 rounded-[2rem] border border-white/5 bg-[#100820] overflow-hidden min-h-[400px] flex flex-col items-center justify-between">
+    <div ref={containerRef} className="theme-feature-card relative p-8 rounded-[2rem] border border-white/5 bg-[#100820] overflow-hidden min-h-[400px] flex flex-col items-center justify-between">
       <div className="w-full">
         <h3 className="font-sans text-sm font-semibold text-vlennd-smoke mb-6 text-center uppercase tracking-widest">Planifica</h3>
         <div className="flex justify-between max-w-[200px] mx-auto text-sm font-mono text-vlennd-ivory/60">
@@ -236,7 +236,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="experiencia" ref={sectionRef} className="py-24 relative z-10 w-full px-6 bg-vlennd-deep/70 backdrop-blur-sm">
+    <section id="experiencia" ref={sectionRef} className="theme-section-surface py-24 relative z-10 w-full px-6 bg-vlennd-deep/70 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center feature-card">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-vlennd-ivory">

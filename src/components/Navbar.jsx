@@ -80,9 +80,9 @@ export default function Navbar({ onFlavorSelect }) {
         ref={navRef}
         className={`fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50 transition-all duration-500 ease-out border ${
           megaOpen
-            ? 'rounded-full bg-[#07010f]/90 md:backdrop-blur-2xl border-vlennd-silver/10 py-4'
+            ? 'theme-nav-panel rounded-full bg-[#07010f]/90 md:backdrop-blur-2xl border-vlennd-silver/10 py-4'
             : scrolled
-              ? 'rounded-full bg-vlennd-carbon/90 md:backdrop-blur-md border-vlennd-silver/20 shadow-[0_0_20px_rgba(209,213,219,0.05)] py-4'
+              ? 'theme-nav-panel rounded-full bg-vlennd-carbon/90 md:backdrop-blur-md border-vlennd-silver/20 shadow-[0_0_20px_rgba(209,213,219,0.05)] py-4'
               : 'rounded-full bg-transparent border-transparent py-5'
         }`}
       >
@@ -128,7 +128,7 @@ export default function Navbar({ onFlavorSelect }) {
       {menuOpen && (
         <div
           ref={overlayRef}
-          className="fixed inset-0 z-[60] md:hidden bg-[#0d0618] flex flex-col"
+          className="theme-mobile-overlay fixed inset-0 z-[60] md:hidden bg-[#0d0618] flex flex-col"
           style={{ transform: 'translateX(100%)' }}
         >
           {/* Header */}
@@ -219,7 +219,7 @@ export default function Navbar({ onFlavorSelect }) {
         className={`hidden md:block fixed left-0 w-screen z-40 transition-all duration-300 ease-out ${megaOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         style={{ top: 0 }}
       >
-        <div className="absolute inset-0 bg-[#07010f]/95 backdrop-blur-2xl border-b border-white/5" />
+        <div className="theme-mega-overlay absolute inset-0 bg-[#07010f]/95 backdrop-blur-2xl border-b border-white/5" />
         <div className="relative max-w-5xl mx-auto px-10 flex gap-12" style={{ paddingTop: '108px', paddingBottom: '40px' }}>
 
           <div className="w-52 flex flex-col justify-between flex-shrink-0">

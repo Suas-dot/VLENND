@@ -238,9 +238,9 @@ export default function Checkout({ selectedPack, availablePacks = [], onSelectPa
   };
 
   return (
-    <section id="checkout" className="py-24 bg-[#0f081a]/80 border-y border-vlennd-silver/10">
+    <section id="checkout" className="theme-section-surface-main py-24 bg-[#0f081a]/80 border-y border-vlennd-silver/10">
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8">
-        <div className="rounded-3xl border border-white/10 bg-vlennd-carbon/70 p-8">
+        <div className="theme-checkout-panel rounded-3xl border border-white/10 bg-vlennd-carbon/70 p-8">
           <p className="font-mono text-xs uppercase tracking-widest text-vlennd-silver/80 mb-3">
             Checkout rapido
           </p>
@@ -419,7 +419,7 @@ export default function Checkout({ selectedPack, availablePacks = [], onSelectPa
           )}
         </div>
 
-        <aside className="rounded-3xl border border-white/10 bg-[#130a22]/70 p-8 h-fit">
+        <aside className="theme-checkout-panel-alt rounded-3xl border border-white/10 bg-[#130a22]/70 p-8 h-fit">
           <p className="font-mono text-xs uppercase tracking-widest text-vlennd-silver/80 mb-3">
             Carrito ({cartBottleCount} botellas)
           </p>

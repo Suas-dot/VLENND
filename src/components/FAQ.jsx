@@ -68,7 +68,7 @@ export default function FAQ() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-vlennd-deep/70 backdrop-blur-sm relative z-10" id="faq">
+    <section ref={containerRef} className="theme-section-surface py-32 bg-vlennd-deep/70 backdrop-blur-sm relative z-10" id="faq">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-16 text-vlennd-ivory">
           Preguntas <span className="text-vlennd-silver text-opacity-80">Frecuentes</span>

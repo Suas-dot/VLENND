@@ -24,7 +24,7 @@ export default function CTA({ onBuyNow }) {
   }, []);
 
   return (
-    <section id="sabores" ref={containerRef} className="py-32 bg-[#0b0515]/70 backdrop-blur-sm relative z-10 border-t border-vlennd-silver/5">
+    <section id="sabores" ref={containerRef} className="theme-section-surface py-32 bg-[#0b0515]/70 backdrop-blur-sm relative z-10 border-t border-vlennd-silver/5">
       <div className="absolute inset-0 bg-silver-gradient opacity-[0.02] mix-blend-overlay pointer-events-none"></div>
       
       <div className="max-w-6xl mx-auto px-6 relative z-10 text-center mb-20">
@@ -38,9 +38,9 @@ export default function CTA({ onBuyNow }) {
           {PACKS.map((pack) => (
             <div 
               key={pack.id}
-              className={`pricing-card w-full lg:w-1/3 flex flex-col p-10 rounded-[2.5rem] border transition-transform duration-500 will-change-transform ${
+              className={`theme-pack-card pricing-card w-full lg:w-1/3 flex flex-col p-10 rounded-[2.5rem] border transition-transform duration-500 will-change-transform ${
                 pack.isPrimary 
-                  ? 'bg-vlennd-carbon border-vlennd-silver/50 shadow-[0_0_50px_rgba(209,213,219,0.15)] lg:scale-110 lg:-translate-y-4 lg:hover:-translate-y-6 z-20' 
+                  ? 'theme-pack-card-primary bg-vlennd-carbon border-vlennd-silver/50 shadow-[0_0_50px_rgba(209,213,219,0.15)] lg:scale-110 lg:-translate-y-4 lg:hover:-translate-y-6 z-20' 
                   : 'bg-[#130a22] border-white/5 hover:-translate-y-2 z-10'
               }`}
             >

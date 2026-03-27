@@ -57,7 +57,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-[#0b0515]/70 backdrop-blur-sm relative z-10 border-y border-vlennd-silver/5">
+    <section ref={sectionRef} className="theme-section-surface py-32 bg-[#0b0515]/70 backdrop-blur-sm relative z-10 border-y border-vlennd-silver/5">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-24 text-vlennd-ivory">
           El trayecto de la <span className="text-vlennd-silver">noche perfecta</span>
@@ -78,7 +78,7 @@ export default function Process() {
             {steps.map((step, idx) => (
               <div key={idx} className="process-step relative flex flex-col items-center md:items-start text-center md:text-left">
                 {/* Number Indicator */}
-                <div className="w-10 h-10 rounded-full bg-vlennd-carbon border border-vlennd-silver text-vlennd-silver flex items-center justify-center font-mono font-bold text-lg mb-6 z-10 shadow-[0_0_15px_rgba(209,213,219,0.2)]">
+                <div className="theme-process-step-badge w-10 h-10 rounded-full bg-vlennd-carbon border border-vlennd-silver text-vlennd-silver flex items-center justify-center font-mono font-bold text-lg mb-6 z-10 shadow-[0_0_15px_rgba(209,213,219,0.2)]">
                   {idx + 1}
                 </div>
                 
