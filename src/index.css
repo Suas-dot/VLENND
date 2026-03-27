@@ -233,6 +233,11 @@ body::-webkit-scrollbar-thumb {
   transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
+.theme-dynamic .theme-mobile-overlay {
+  background-color: var(--flavor-surface-main-opaque) !important;
+  opacity: 1 !important;
+}
+
 .theme-dynamic .theme-hero-badge {
   background-color: var(--flavor-surface-main) !important;
   border-color: var(--flavor-surface-border) !important;
