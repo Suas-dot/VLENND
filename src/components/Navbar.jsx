@@ -1,16 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { X, ChevronRight, ChevronLeft } from 'lucide-react';
+import { FLAVORS } from '../data/flavors';
 
-const FLAVORS = [
-  { label: 'Uva',           color: '#7c3aed', glow: '#4c1d95', href: '#sabores' },
-  { label: 'Moscow Mule',   color: '#059669', glow: '#064e3b', href: '#sabores' },
-  { label: 'Bubble Gum',    color: '#be185d', glow: '#831843', href: '#sabores' },
-  { label: 'Naranjilla',    color: '#b45309', glow: '#78350f', href: '#sabores' },
-  { label: 'Manzana Verde', color: '#15803d', glow: '#14532d', href: '#sabores' },
-];
-
-export default function Navbar() {
+export default function Navbar({ onFlavorSelect }) {
   const [scrolled, setScrolled]       = useState(false);
   const [menuOpen, setMenuOpen]       = useState(false);
   const [flavorsOpen, setFlavorsOpen] = useState(false);
@@ -94,7 +87,7 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between px-6 md:px-10">
-          <a href="#" className="flex items-center gap-2 text-vlennd-ivory">
+          <a href="#top" className="flex items-center gap-2 text-vlennd-ivory">
             <img src="/logo-vlennd.png" alt="VLENND logo" className="w-6 h-6 md:w-[30px] md:h-[30px] object-contain brightness-0 invert flex-shrink-0 self-start mt-[5px]" />
             <div className="flex flex-col leading-none gap-[3px]">
               <span className="font-heading text-2xl md:text-3xl font-bold tracking-[0.35em]">VLENND</span>
@@ -116,7 +109,7 @@ export default function Navbar() {
             <a href="#faq" className="px-4 py-1.5 rounded-full transition-all duration-300 hover:bg-white/10 hover:text-vlennd-silver">FAQ</a>
           </div>
 
-          <a href="#sabores" className="hidden md:block bg-silver-gradient text-vlennd-deep font-sans font-semibold text-base px-8 py-3 rounded-full hover:scale-[1.03] transition-transform duration-300 shadow-[0_4px_14px_rgba(209,213,219,0.25)]">
+          <a href="#checkout" className="hidden md:block bg-silver-gradient text-vlennd-deep font-sans font-semibold text-base px-8 py-3 rounded-full hover:scale-[1.03] transition-transform duration-300 shadow-[0_4px_14px_rgba(209,213,219,0.25)]">
             Comprar ahora
           </a>
 
@@ -140,7 +133,7 @@ export default function Navbar() {
         >
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
-            <a href="#" onClick={closeMenu} className="flex items-center gap-2 text-vlennd-ivory">
+            <a href="#top" onClick={closeMenu} className="flex items-center gap-2 text-vlennd-ivory">
               <img src="/logo-vlennd.png" alt="VLENND logo" className="w-5 h-5 object-contain brightness-0 invert" />
               <div className="flex flex-col leading-none gap-[2px]">
                 <span className="font-heading text-xl font-bold tracking-[0.3em]">VLENND</span>
@@ -176,7 +169,7 @@ export default function Navbar() {
                 </a>
 
                 <div className="mt-auto pt-10">
-                  <a href="#sabores" onClick={handleLinkClick} className="block w-full text-center bg-silver-gradient text-vlennd-deep font-sans font-bold text-base py-4 rounded-full shadow-[0_4px_14px_rgba(209,213,219,0.25)]">
+                  <a href="#checkout" onClick={handleLinkClick} className="block w-full text-center bg-silver-gradient text-vlennd-deep font-sans font-bold text-base py-4 rounded-full shadow-[0_4px_14px_rgba(209,213,219,0.25)]">
                     Comprar ahora
                   </a>
                 </div>
@@ -200,7 +193,11 @@ export default function Navbar() {
                   <a
                     key={f.label}
                     href={f.href}
-                    onClick={handleLinkClick}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      onFlavorSelect?.(f);
+                      handleLinkClick();
+                    }}
                     className="flex items-center justify-between py-4 border-b border-white/5 group"
                   >
                     <span className="font-heading text-xl font-bold text-vlennd-ivory/70 group-hover:text-vlennd-ivory transition-colors tracking-widest uppercase">
@@ -239,12 +236,29 @@ export default function Navbar() {
           <div className="w-px bg-white/8 self-stretch" style={{ opacity: megaOpen ? 1 : 0, transition: 'opacity 0.5s ease', transitionDelay: megaOpen ? '100ms' : '0ms' }} />
 
           <div className="flex-1 grid grid-cols-5 gap-3">
-            {FLAVORS.map((f, i) => (
-              <a key={f.label} href={f.href}
-                className="group/card relative rounded-2xl border border-white/5 hover:border-vlennd-silver/30 overflow-hidden p-5 flex flex-col justify-end min-h-[120px] transition-all duration-300 bg-white/[0.03] hover:bg-white/[0.07]"
-                style={{ opacity: megaOpen ? 1 : 0, transform: megaOpen ? 'translateY(0)' : 'translateY(12px)', transition: 'opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, border-color 0.3s ease', transitionDelay: megaOpen ? `${180 + i * 50}ms` : '0ms' }}
+            {FLAVORS.map((f) => (
+              <a
+                key={f.label}
+                href={f.href}
+                onClick={(event) => {
+                  event.preventDefault();
+                  onFlavorSelect?.(f);
+                  setMegaOpen(false);
+                }}
+                className="relative rounded-2xl border border-white/10 overflow-hidden p-4 flex flex-col justify-between min-h-[170px]"
+                style={{
+                  opacity: megaOpen ? 1 : 0,
+                  background: `linear-gradient(160deg, ${f.color}66 0%, ${f.glow}AA 100%)`
+                }}
               >
-                <span className="font-sans text-[11px] tracking-[0.2em] uppercase font-semibold text-vlennd-ivory/50 group-hover/card:text-vlennd-ivory transition-colors duration-200">{f.label}</span>
+                <img
+                  src="/bottle-menu.png"
+                  alt={`Botella ${f.label}`}
+                  className="relative z-10 h-20 w-auto mx-auto object-contain"
+                />
+                <span className="relative z-10 font-sans text-[11px] tracking-[0.2em] uppercase font-semibold text-vlennd-ivory text-center">
+                  {f.label}
+                </span>
               </a>
             ))}
           </div>

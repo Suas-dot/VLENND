@@ -147,6 +147,11 @@ function FeatureCalendar() {
   const btnRef = useRef(null);
   const fridayRef = useRef(null);
 
+  const handleGoToCheckout = () => {
+    const checkout = document.getElementById('checkout');
+    checkout?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
@@ -188,7 +193,12 @@ function FeatureCalendar() {
       </div>
 
       <div className="relative z-10">
-        <button ref={btnRef} className="border border-vlennd-silver/50 text-vlennd-smoke px-6 py-2 rounded-full font-sans text-sm font-semibold transition-all">
+        <button
+          ref={btnRef}
+          type="button"
+          onClick={handleGoToCheckout}
+          className="border border-vlennd-silver/50 text-vlennd-smoke px-6 py-2 rounded-full font-sans text-sm font-semibold transition-all"
+        >
           Comprar para la fiesta
         </button>
       </div>
@@ -226,7 +236,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 relative z-10 w-full px-6 bg-vlennd-deep/70 backdrop-blur-sm">
+    <section id="experiencia" ref={sectionRef} className="py-24 relative z-10 w-full px-6 bg-vlennd-deep/70 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 text-center feature-card">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-vlennd-ivory">

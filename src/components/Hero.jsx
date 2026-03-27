@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { MousePointer2, Sparkles, Flame, PartyPopper } from 'lucide-react';
+import { PACKS } from '../data/packs';
 
-export default function Hero() {
+const defaultPremiumPack = PACKS.find((pack) => pack.id === 'premium') ?? PACKS[0];
+
+export default function Hero({ onBuyNow }) {
   const containerRef = useRef(null);
   const headingRef = useRef(null);
   const mockupRef = useRef(null);
@@ -108,7 +111,10 @@ export default function Hero() {
       </div>
 
       <div className="cta-button relative z-30 mt-16">
-        <button className="bg-silver-gradient text-vlennd-deep font-sans font-bold text-lg px-12 py-5 rounded-full hover:scale-[1.03] transition-transform duration-300 shadow-[0_8px_24px_rgba(209,213,219,0.3)] flex items-center gap-3">
+        <button
+          className="bg-silver-gradient text-vlennd-deep font-sans font-bold text-lg px-12 py-5 rounded-full hover:scale-[1.03] transition-transform duration-300 shadow-[0_8px_24px_rgba(209,213,219,0.3)] flex items-center gap-3"
+          onClick={() => onBuyNow?.(defaultPremiumPack)}
+        >
           Comprar VLENND
         </button>
       </div>

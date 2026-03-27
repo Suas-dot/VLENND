@@ -1,4 +1,4 @@
-import { useRef, useMemo } from "react"
+import { useRef, useMemo, useEffect } from "react"
 import { useFrame } from "@react-three/fiber"
 import * as THREE from "three"
 
@@ -61,8 +61,13 @@ export function ShaderPlane({
       color1: { value: new THREE.Color(color1) },
       color2: { value: new THREE.Color(color2) },
     }),
-    [color1, color2],
+    [],
   )
+
+  useEffect(() => {
+    uniforms.color1.value.set(color1)
+    uniforms.color2.value.set(color2)
+  }, [color1, color2, uniforms])
 
   useFrame((state) => {
     if (mesh.current) {

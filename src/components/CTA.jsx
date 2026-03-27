@@ -1,31 +1,8 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { PACKS } from '../data/packs';
 
-const packs = [
-  {
-    name: "Pack Fiesta",
-    bottles: 3,
-    desc: "Sabores mixtos",
-    btnText: "Comprar pack",
-    isPrimary: false
-  },
-  {
-    name: "Pack Premium",
-    bottles: 6,
-    desc: "Sabores variados • Edición especial",
-    btnText: "Comprar ahora",
-    isPrimary: true
-  },
-  {
-    name: "Pack Evento",
-    bottles: 12,
-    desc: "Ideal para fiestas grandes",
-    btnText: "Comprar lote",
-    isPrimary: false
-  }
-];
-
-export default function CTA() {
+export default function CTA({ onBuyNow }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -34,8 +11,9 @@ export default function CTA() {
         y: 40,
         opacity: 0,
         duration: 1,
-        stagger: 0.15,
+        stagger: 0,
         ease: "power3.out",
+        clearProps: "transform,opacity",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 70%",
@@ -46,7 +24,7 @@ export default function CTA() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-[#0b0515]/70 backdrop-blur-sm relative z-10 border-t border-vlennd-silver/5">
+    <section id="sabores" ref={containerRef} className="py-32 bg-[#0b0515]/70 backdrop-blur-sm relative z-10 border-t border-vlennd-silver/5">
       <div className="absolute inset-0 bg-silver-gradient opacity-[0.02] mix-blend-overlay pointer-events-none"></div>
       
       <div className="max-w-6xl mx-auto px-6 relative z-10 text-center mb-20">
@@ -56,10 +34,10 @@ export default function CTA() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-6">
-          {packs.map((pack, idx) => (
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 lg:gap-6">
+          {PACKS.map((pack) => (
             <div 
-              key={idx} 
+              key={pack.id}
               className={`pricing-card w-full lg:w-1/3 flex flex-col p-10 rounded-[2.5rem] border transition-transform duration-500 will-change-transform ${
                 pack.isPrimary 
                   ? 'bg-vlennd-carbon border-vlennd-silver/50 shadow-[0_0_50px_rgba(209,213,219,0.15)] lg:scale-110 lg:-translate-y-4 lg:hover:-translate-y-6 z-20' 
@@ -79,11 +57,18 @@ export default function CTA() {
                  <span className="font-heading text-5xl font-bold text-vlennd-ivory">{pack.bottles}</span>
                  <span className="font-sans text-vlennd-smoke font-medium">botellas</span>
               </div>
+              <p className="font-mono text-sm text-vlennd-silver mb-2">
+                ${pack.price.toFixed(2)}
+              </p>
+              <p className="font-sans text-xs text-vlennd-silver/70 mb-2">
+                Ahorra {Math.round((pack.discount ?? 0) * 100)}% vs botellas individuales
+              </p>
               <p className="font-sans text-sm text-vlennd-smoke mb-10 h-8">
                 {pack.desc}
               </p>
               
               <button 
+                onClick={() => onBuyNow?.(pack)}
                 className={`mt-auto w-full py-4 rounded-full font-sans font-bold text-sm tracking-wide transition-all duration-300 ${
                   pack.isPrimary 
                     ? 'bg-silver-gradient text-vlennd-deep hover:shadow-[0_0_20px_rgba(209,213,219,0.4)] hover:scale-105'
