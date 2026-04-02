@@ -10,6 +10,7 @@ import Checkout from './components/Checkout';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import { PACKS } from './data/packs';
+import { FLAVORS } from './data/flavors';
 
 const defaultBackgroundTheme = {
   base: '#0d0618',
@@ -65,6 +66,7 @@ function App() {
   const [selectedPack, setSelectedPack] = useState(
     PACKS.find((pack) => pack.id === 'premium') ?? PACKS[0]
   );
+  const [selectedFlavor, setSelectedFlavor] = useState(FLAVORS[0] ?? null);
   const [backgroundTheme, setBackgroundTheme] = useState(defaultBackgroundTheme);
 
   const handleBuyNow = (pack) => {
@@ -80,6 +82,8 @@ function App() {
     if (!flavor) {
       return;
     }
+
+    setSelectedFlavor(flavor);
 
     const accent = mixColors(flavor.color, '#ffffff', 0.45);
     const accentStrong = mixColors(flavor.glow, '#ffffff', 0.55);
@@ -132,7 +136,7 @@ function App() {
         }}
       >
         <Navbar onFlavorSelect={handleFlavorSelect} />
-        <Hero onBuyNow={handleBuyNow} />
+        <Hero onBuyNow={handleBuyNow} selectedFlavor={selectedFlavor} />
         <SocialProof />
         <Process />
 

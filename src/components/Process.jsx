@@ -4,7 +4,7 @@ import gsap from 'gsap';
 const steps = [
   {
     title: "Elegir tu sabor",
-    desc: "Uva, chicle, naranjilla, manzana verde y más."
+    desc: "Grape Rave, chicle, Lulo Sense, manzana verde y más."
   },
   {
     title: "Preparar la noche",

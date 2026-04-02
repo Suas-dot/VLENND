@@ -4,12 +4,17 @@ import { MousePointer2, Sparkles, Flame, PartyPopper } from 'lucide-react';
 import { PACKS } from '../data/packs';
 
 const defaultPremiumPack = PACKS.find((pack) => pack.id === 'premium') ?? PACKS[0];
+const defaultHeroVideo =
+  'https://res.cloudinary.com/dgxip0hfu/video/upload/q_auto,f_auto/v1773470008/0314_gyatcv.mp4';
 
-export default function Hero({ onBuyNow }) {
+export default function Hero({ onBuyNow, selectedFlavor }) {
   const containerRef = useRef(null);
   const headingRef = useRef(null);
   const mockupRef = useRef(null);
   const badgesRef = useRef([]);
+  const videoRef = useRef(null);
+  const heroVideoSrc = selectedFlavor?.videoSrc ?? defaultHeroVideo;
+  const flavorGlowColor = selectedFlavor?.glow ?? '#2d1654';
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -44,10 +49,34 @@ export default function Hero({ onBuyNow }) {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    const videoEl = videoRef.current;
+    videoEl.pause();
+    videoEl.src = heroVideoSrc;
+    videoEl.load();
+
+    const resumePlayback = () => {
+      videoEl.play().catch(() => {});
+    };
+
+    if (videoEl.readyState >= 2) {
+      resumePlayback();
+    } else {
+      videoEl.addEventListener('loadeddata', resumePlayback, { once: true });
+    }
+  }, [heroVideoSrc]);
+
   return (
     <section ref={containerRef} className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 overflow-hidden bg-transparent">
 
-      <div className="theme-hero-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-purple-900/20 blur-[180px] rounded-full pointer-events-none z-10" />
+      <div
+        className="theme-hero-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] blur-[180px] rounded-full pointer-events-none z-10"
+        style={{ backgroundColor: `${flavorGlowColor}33` }}
+      />
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 mb-12">
         <h1 className="sr-only">VLENND Vodka</h1>
@@ -68,21 +97,19 @@ export default function Hero({ onBuyNow }) {
           className="relative w-64 md:w-[320px] h-[450px] md:h-[580px] rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.9)] border border-white/10 group"
           style={{ transform: 'rotateY(-8deg) rotateX(4deg)', transformStyle: 'preserve-3d' }}
         >
-          {/* Integrated Video - The New One */}
+          {/* Integrated Video */}
           <video
+            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
-            poster="/bottle.png"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          >
-            <source src="https://res.cloudinary.com/dgxip0hfu/video/upload/q_auto,f_auto/v1773470008/0314_gyatcv.mp4" type="video/mp4" />
-          </video>
+            src={heroVideoSrc}
+          />
 
           {/* Restoration of Elegant Overlays from the first version */}
-          <div className="absolute inset-0 bg-gradient-to-t from-vlennd-deep via-transparent to-vlennd-deep/20"></div>
           <div className="absolute inset-0 bg-vlennd-silver/5 mix-blend-overlay"></div>
 
           {/* Restoration of the Glossy Reflection Effect */}
